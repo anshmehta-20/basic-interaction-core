@@ -9,7 +9,7 @@ import { ThemeToggle } from './components/ThemeToggle'
 
 function App() {
   return (
-    <div className="min-h-screen w-full relative">
+    <div className="app-container">
       <VideoBackground />
       <ThemeToggle />
       
