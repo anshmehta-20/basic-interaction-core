@@ -14,17 +14,6 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="dark-mode">
-    <!-- Video Background and Overlay -->
-    <div class="video-background">
-        <!-- Added playsinline for better mobile compatibility -->
-        <video autoplay muted loop id="bgVideo" playsinline poster="/images/marvel_intro_poster.jpg">
-            <!-- Using a local placeholder image for the poster if the video fails to load -->
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-network-of-glowing-nodes-3206-large.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <div class="video-overlay"></div>
-
     <!-- Theme Switch Toggle -->
     <div class="theme-switch-wrapper">
         <label class="theme-switch" for="checkbox">
@@ -32,6 +21,16 @@
             <div class="slider round"></div> <!-- Added 'round' class for consistency -->
         </label>
         <em>Dark Mode</em>
+    </div>
+
+    <!-- Video Background -->
+    <div class="video-background">
+        <!-- Added playsinline for better mobile compatibility -->
+        <video autoplay muted loop id="bgVideo" playsinline poster="/images/marvel_intro_poster.jpg">
+            <!-- Using a local placeholder image for the poster if the video fails to load -->
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-network-of-glowing-nodes-3206-large.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
     <!-- Main Content Wrapper -->
