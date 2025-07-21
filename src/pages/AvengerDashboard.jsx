@@ -58,11 +58,11 @@ export const AvengerDashboard = () => {
       }}>
         <DotGrid
           dotSize={8}
-          gap={18}
-          baseColor="#1e3a8a"
-          activeColor="#3b82f6"
-          proximity={100}
-          shockRadius={200}
+          gap={22}
+          baseColor="#2a2a2a"
+          activeColor="#1507ff"
+          proximity={80}
+          shockRadius={120}
           shockStrength={4}
           resistance={800}
           returnDuration={1.2}

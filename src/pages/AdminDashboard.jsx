@@ -57,15 +57,15 @@ export const AdminDashboard = () => {
         zIndex: -1 
       }}>
         <DotGrid
-          dotSize={10}
-          gap={15}
-          baseColor="#dc3545"
+          dotSize={8}
+          gap={22}
+          baseColor="#2a2a2a"
           activeColor="#ff4757"
-          proximity={120}
-          shockRadius={250}
-          shockStrength={5}
-          resistance={750}
-          returnDuration={1.5}
+          proximity={80}
+          shockRadius={120}
+          shockStrength={4}
+          resistance={800}
+          returnDuration={1.2}
         />
       </div>
       
