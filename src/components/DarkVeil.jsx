@@ -75,12 +75,12 @@ void main(){
 `;
 
 export default function DarkVeil({
-  hueShift = 0,
-  noiseIntensity = 0.02,
+  hueShift = 245,
+  noiseIntensity = 0.03,
   scanlineIntensity = 0.1,
   speed = 0.5,
-  scanlineFrequency = 100,
-  warpAmount = 0.1,
+  scanlineFrequency = 2,
+  warpAmount = 0.5,
   resolutionScale = 1,
 }) {
   const ref = useRef(null);

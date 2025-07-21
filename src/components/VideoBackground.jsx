@@ -6,12 +6,12 @@ export const VideoBackground = () => {
     <>
       <div className="video-background">
         <DarkVeil
-          hueShift={15}
+          hueShift={245}
           noiseIntensity={0.03}
-          scanlineIntensity={0.05}
-          speed={0.3}
-          scanlineFrequency={80}
-          warpAmount={0.08}
+          scanlineIntensity={0.02}
+          speed={0.5}
+          scanlineFrequency={50}
+          warpAmount={0.2}
           resolutionScale={1}
         />
       </div>
