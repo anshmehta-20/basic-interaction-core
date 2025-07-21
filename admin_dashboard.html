@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Avengers Command Center</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin_dashboard.css">
+</head>
+<body class="dark-mode">
+    <!-- Theme Switch -->
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" checked />
+            <div class="slider round"></div>
+        </label>
+        <em>Dark Mode</em>
+    </div>
+
+    <!-- Background Video -->
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="videos/marvel_intro.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Dashboard Header -->
+        <header class="dashboard-header">
+            <h1 class="dashboard-title">Avengers Command Center</h1>
+            <p class="welcome-message">Welcome, <span id="welcomeUsername">Admin</span>! Earth's Mightiest Heroes Dashboard</p>
+        </header>
+
+        <!-- Dashboard Layout Container -->
+        <div class="dashboard-layout-container">
+            <!-- Sidebar Navigation -->
+            <nav class="sidebar">
+                <ul>
+                    <li class="nav-item active" data-section="overview">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Overview</span>
+                    </li>
+                    <li class="nav-item" data-section="payments">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Payments</span>
+                    </li>
+                    <li class="nav-item" data-section="missions">
+                        <i class="fas fa-crosshairs"></i>
+                        <span>Missions</span>
+                    </li>
+                    <li class="nav-item" data-section="attendance">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Attendance</span>
+                    </li>
+                    <li class="nav-item" data-section="feedback">
+                        <i class="fas fa-comment-dots"></i>
+                        <span>Feedback</span>
+                    </li>
+                    <li class="nav-item" data-section="announcements">
+                        <i class="fas fa-bullhorn"></i>
+                        <span>Announcements</span>
+                    </li>
+                    <li class="nav-item" data-section="manage-avengers">
+                        <i class="fas fa-users"></i>
+                        <span>Manage Avengers</span>
+                    </li>
+                    <li class="nav-item" data-section="stats-reports">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Stats & Reports</span>
+                    </li>
+                </ul>
+                <button class="logout-sidebar-btn" id="logoutButton">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main class="dashboard-main-content">
+                <!-- Overview Section -->
+                <section id="overview" class="dashboard-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-chart-line"></i>
+                        Dashboard Overview
+                    </h2>
+                    
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Total Avengers</h3>
+                            <p id="totalAvengers">24</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-crosshairs"></i>
+                            </div>
+                            <h3>Active Missions</h3>
+                            <p id="activeMissions">8</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                            <h3>Pending Feedback</h3>
+                            <p id="pendingFeedback">12</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <h3>Total Payments</h3>
+                            <p id="totalPayments">₹ 2,50,000</p>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activities -->
+                    <div class="card">
+                        <h3><i class="fas fa-clock"></i> Recent Activities</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <i class="fas fa-user-plus activity-icon"></i>
+                                <span>New Avenger registered: Spider-Man</span>
+                                <time>2 hours ago</time>
+                            </div>
+                            <div class="activity-item">
+                                <i class="fas fa-crosshairs activity-icon"></i>
+                                <span>Mission "Operation Thunder" completed</span>
+                                <time>4 hours ago</time>
+                            </div>
+                            <div class="activity-item">
+                                <i class="fas fa-comment-dots activity-icon"></i>
+                                <span>New feedback received from Iron Man</span>
+                                <time>6 hours ago</time>
+                            </div>
+                            <div class="activity-item">
+                                <i class="fas fa-coins activity-icon"></i>
+                                <span>Salary payment processed for Captain America</span>
+                                <time>1 day ago</time>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Other sections will be added here -->
+                <section id="payments" class="dashboard-section hidden">
+                    <h2 class="section-title">
+                        <i class="fas fa-credit-card"></i>
+                        Payments Management
+                    </h2>
+                    <div class="card">
+                        <p>Payments section is under development.</p>
+                    </div>
+                </section>
+
+                <section id="missions" class="dashboard-section hidden">
+                    <h2 class="section-title">
+                        <i class="fas fa-crosshairs"></i>
+                        Missions Management
+                    </h2>
+                    <div class="card">
+                        <p>Missions section is under development.</p>
+                    </div>
+                </section>
+
+                <section id="attendance" class="dashboard-section hidden">
+                    <h2 class="section-title">
+                        <i class="fas fa-calendar-check"></i>
+                        Attendance Management
+                    </h2>
+                    <div class="card">
+                        <p>Attendance section is under development.</p>
+                    </div>
+                </section>
+
+                <section id="feedback" class="dashboard-section hidden">
+                    <h2 class="section-title">
+                        <i class="fas fa-comment-dots"></i>
+                        Feedback Management
+                    </h2>
+                    <div class="card">
+                        <p>Feedback section is under development.</p>
+                    </div>
+                </section>
+
+                <section id="announcements" class="dashboard-section hidden">
+                    <h2 class="section-title">
+                        <i class="fas fa-bullhorn"></i>
+                        Announcements
+                    </h2>
+                    <div class="card">
+                        <p>Announcements section is under development.</p>
+                    </div>
+                </section>
+
+                <section id="manage-avengers" class="dashboard-section hidden">
+                    <h2 class="section-title">
+                        <i class="fas fa-users"></i>
+                        Manage Avengers
+                    </h2>
+                    <div class="card">
+                        <p>Manage Avengers section is under development.</p>
+                    </div>
+                </section>
+
+                <section id="stats-reports" class="dashboard-section hidden">
+                    <h2 class="section-title">
+                        <i class="fas fa-chart-bar"></i>
+                        Stats & Reports
+                    </h2>
+                    <div class="card">
+                        <p>Stats & Reports section is under development.</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/style.js"></script>
+    <script src="js/admin_dashboard.js"></script>
+</body>
+</html>
