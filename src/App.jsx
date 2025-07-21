@@ -10,14 +10,34 @@ import { ThemeToggle } from './components/ThemeToggle'
 function App() {
   return (
     <div className="app-container">
-      <VideoBackground />
-      <ThemeToggle />
       
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/admin-dashboard" element={<AdminDashboard />} />
-        <Route path="/avenger-dashboard" element={<AvengerDashboard />} />
+        <Route path="/" element={
+          <>
+            <VideoBackground />
+            <ThemeToggle />
+            <Login />
+          </>
+        } />
+        <Route path="/register" element={
+          <>
+            <VideoBackground />
+            <ThemeToggle />
+            <Register />
+          </>
+        } />
+        <Route path="/admin-dashboard" element={
+          <>
+            <ThemeToggle />
+            <AdminDashboard />
+          </>
+        } />
+        <Route path="/avenger-dashboard" element={
+          <>
+            <ThemeToggle />
+            <AvengerDashboard />
+          </>
+        } />
       </Routes>
     </div>
   )

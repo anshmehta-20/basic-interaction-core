@@ -1,11 +1,14 @@
 
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTheme } from '../contexts/ThemeContext'
 import DotGrid from '../components/animations/DotGrid'
+import TiltedCard from '../components/cards/TiltedCard'
 import '../styles/dashboard.css'
 
 export const AvengerDashboard = () => {
   const [activeSection, setActiveSection] = useState('overview')
+  const { isDark, toggleTheme } = useTheme()
   const navigate = useNavigate()
 
   const handleNavClick = (section) => {
@@ -16,8 +19,35 @@ export const AvengerDashboard = () => {
     navigate('/')
   }
 
+  // Dashboard stats data
+  const dashboardStats = [
+    {
+      icon: 'fas fa-rocket',
+      title: 'Active Missions',
+      value: '3',
+      image: 'https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=300&h=300&fit=crop&crop=center'
+    },
+    {
+      icon: 'fas fa-trophy',
+      title: 'Completed Missions',
+      value: '45',
+      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=300&fit=crop&crop=center'
+    },
+    {
+      icon: 'fas fa-percentage',
+      title: 'Attendance Rate',
+      value: '94%',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=center'
+    },
+    {
+      icon: 'fas fa-coins',
+      title: 'Current Balance',
+      value: '₹ 50,000',
+      image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=300&h=300&fit=crop&crop=center'
+    }
+  ]
   return (
-    <div className="content-wrapper">
+    <div className="content-wrapper avenger-dashboard">
       <div style={{ 
         position: 'fixed', 
         top: 0, 
@@ -79,27 +109,33 @@ export const AvengerDashboard = () => {
             <section className="dashboard-section">
               <h2 className="section-title">Home Base</h2>
               
-              <div className="stats-grid">
-                <div className="stat-card">
-                  <div className="stat-icon"><i className="fas fa-rocket"></i></div>
-                  <h3>Active Missions</h3>
-                  <p>3</p>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-icon"><i className="fas fa-trophy"></i></div>
-                  <h3>Completed Missions</h3>
-                  <p>45</p>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-icon"><i className="fas fa-percentage"></i></div>
-                  <h3>Attendance Rate</h3>
-                  <p>94%</p>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-icon"><i className="fas fa-coins"></i></div>
-                  <h3>Current Balance</h3>
-                  <p>₹ 50,000</p>
-                </div>
+              <div className="tilted-cards-grid">
+                {dashboardStats.map((stat, index) => (
+                  <TiltedCard
+                    key={index}
+                    imageSrc={stat.image}
+                    altText={stat.title}
+                    captionText={stat.title}
+                    containerHeight="280px"
+                    containerWidth="100%"
+                    imageHeight="280px"
+                    imageWidth="100%"
+                    rotateAmplitude={12}
+                    scaleOnHover={1.1}
+                    showMobileWarning={false}
+                    showTooltip={true}
+                    displayOverlayContent={true}
+                    overlayContent={
+                      <div>
+                        <div className="stat-icon">
+                          <i className={stat.icon}></i>
+                        </div>
+                        <div className="stat-title">{stat.title}</div>
+                        <div className="stat-value">{stat.value}</div>
+                      </div>
+                    }
+                  />
+                ))}
               </div>
 
               <div className="card">
