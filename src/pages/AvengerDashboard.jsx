@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import DotGrid from '../components/animations/DotGrid'
 import '../styles/dashboard.css'
 
 export const AvengerDashboard = () => {
@@ -17,6 +18,27 @@ export const AvengerDashboard = () => {
 
   return (
     <div className="content-wrapper">
+      <div style={{ 
+        position: 'fixed', 
+        top: 0, 
+        left: 0, 
+        width: '100%', 
+        height: '100%', 
+        zIndex: -1 
+      }}>
+        <DotGrid
+          dotSize={8}
+          gap={18}
+          baseColor="#1e3a8a"
+          activeColor="#3b82f6"
+          proximity={100}
+          shockRadius={200}
+          shockStrength={4}
+          resistance={800}
+          returnDuration={1.2}
+        />
+      </div>
+      
       <header className="dashboard-header">
         <h1 className="dashboard-title">Avengers Portal</h1>
         <p className="welcome-message">Welcome, <span>Agent!</span></p>

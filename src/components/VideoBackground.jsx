@@ -8,14 +8,13 @@ export const VideoBackground = () => {
         <DarkVeil
           hueShift={245}
           noiseIntensity={0.03}
-          scanlineIntensity={0.02}
+          scanlineIntensity={0.01}
           speed={0.5}
-          scanlineFrequency={50}
-          warpAmount={0.2}
+          scanlineFrequency={80}
+          warpAmount={0.15}
           resolutionScale={1}
         />
       </div>
-      <div className="video-overlay"></div>
     </>
   )
 }
