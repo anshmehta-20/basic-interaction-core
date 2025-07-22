@@ -64,10 +64,10 @@ export const AvengerDashboard = () => {
         zIndex: -1 
       }}>
         <DotGrid
-          dotSize={8}
-          gap={22}
+          dotSize={2}
+          gap={18}
           baseColor="#2a2a2a"
-          activeColor="#5227FF"
+          activeColor="#2507ff"
           proximity={80}
           shockRadius={120}
           shockStrength={4}
@@ -77,7 +77,7 @@ export const AvengerDashboard = () => {
       </div>
       
       <header className="dashboard-header">
-        <h1 className="dashboard-title">Avenger Dashboard</h1>
+        <h1 className="dashboard-title">Avenger<span className='dashboard-title-span'>  Dashboard</span></h1>
         
         <nav className="horizontal-nav">
           {navigationItems.map((item) => (

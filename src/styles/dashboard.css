@@ -580,6 +580,8 @@ body.light-mode .avenger-card {
   background: rgba(220, 53, 69, 0.1);
   border-radius: 50%;
   border: 2px solid rgba(220, 53, 69, 0.3);
+  height: 100px;
+  width: 100px;
 }
 
 .avenger-info h4 {
@@ -609,6 +611,10 @@ body.light-mode .avenger-info h4 {
 
 body.light-mode .avenger-role {
   color: rgba(0, 0, 0, 0.6);
+}
+
+.dashboard-title-span{
+  padding-right:10px;
 }
 
 .avenger-stats {
