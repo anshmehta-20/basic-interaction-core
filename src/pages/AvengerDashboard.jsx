@@ -24,28 +24,35 @@ export const AvengerDashboard = () => {
     {
       icon: 'fas fa-rocket',
       title: 'Active Missions',
-      value: '3',
-      image: 'https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=300&h=300&fit=crop&crop=center'
+      value: '3'
     },
     {
       icon: 'fas fa-trophy',
       title: 'Completed Missions',
-      value: '45',
-      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=300&fit=crop&crop=center'
+      value: '45'
     },
     {
       icon: 'fas fa-percentage',
       title: 'Attendance Rate',
-      value: '94%',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=center'
+      value: '94%'
     },
     {
       icon: 'fas fa-coins',
       title: 'Current Balance',
-      value: '₹ 50,000',
-      image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=300&h=300&fit=crop&crop=center'
+      value: '₹ 50,000'
     }
   ]
+
+  const navigationItems = [
+    { id: 'overview', label: 'Home Base', icon: 'fas fa-home' },
+    { id: 'missions', label: 'My Missions', icon: 'fas fa-rocket' },
+    { id: 'attendance', label: 'Check-In', icon: 'fas fa-user-check' },
+    { id: 'balance', label: 'Account Balance', icon: 'fas fa-wallet' },
+    { id: 'feedback', label: 'Send Feedback', icon: 'fas fa-comment-dots' },
+    { id: 'announcements', label: 'Announcements', icon: 'fas fa-bullhorn' },
+    { id: 'profile', label: 'Profile', icon: 'fas fa-user-cog' }
+  ]
+
   return (
     <div className="content-wrapper avenger-dashboard">
       <div style={{ 
@@ -60,7 +67,7 @@ export const AvengerDashboard = () => {
           dotSize={8}
           gap={22}
           baseColor="#2a2a2a"
-          activeColor="#1507ff"
+          activeColor="#5227FF"
           proximity={80}
           shockRadius={120}
           shockStrength={4}
@@ -70,50 +77,34 @@ export const AvengerDashboard = () => {
       </div>
       
       <header className="dashboard-header">
-        <h1 className="dashboard-title">Avengers Portal</h1>
-        <p className="welcome-message">Welcome, <span>Agent!</span></p>
-      </header>
-
-      <div className="dashboard-layout-container">
-        <nav className="sidebar">
-          <ul>
-            <li className={`nav-item ${activeSection === 'overview' ? 'active' : ''}`} onClick={() => handleNavClick('overview')}>
-              <i className="fas fa-home"></i> Home Base
-            </li>
-            <li className={`nav-item ${activeSection === 'missions' ? 'active' : ''}`} onClick={() => handleNavClick('missions')}>
-              <i className="fas fa-rocket"></i> My Missions
-            </li>
-            <li className={`nav-item ${activeSection === 'attendance' ? 'active' : ''}`} onClick={() => handleNavClick('attendance')}>
-              <i className="fas fa-user-check"></i> Check-In
-            </li>
-            <li className={`nav-item ${activeSection === 'balance' ? 'active' : ''}`} onClick={() => handleNavClick('balance')}>
-              <i className="fas fa-wallet"></i> Account Balance
-            </li>
-            <li className={`nav-item ${activeSection === 'feedback' ? 'active' : ''}`} onClick={() => handleNavClick('feedback')}>
-              <i className="fas fa-comment-dots"></i> Send Feedback
-            </li>
-            <li className={`nav-item ${activeSection === 'announcements' ? 'active' : ''}`} onClick={() => handleNavClick('announcements')}>
-              <i className="fas fa-bullhorn"></i> Announcements
-            </li>
-            <li className={`nav-item ${activeSection === 'profile' ? 'active' : ''}`} onClick={() => handleNavClick('profile')}>
-              <i className="fas fa-user-cog"></i> Profile
-            </li>
-          </ul>
-          <button className="logout-sidebar-btn" onClick={handleLogout}>
-            <i className="fas fa-sign-out-alt"></i> Logout
+        <h1 className="dashboard-title">Avenger Dashboard</h1>
+        
+        <nav className="horizontal-nav">
+          {navigationItems.map((item) => (
+            <button
+              key={item.id}
+              className={`nav-button ${activeSection === item.id ? 'active' : ''}`}
+              onClick={() => handleNavClick(item.id)}
+            >
+              <i className={item.icon}></i>
+              <span>{item.label}</span>
+            </button>
+          ))}
+          <button className="logout-nav-btn" onClick={handleLogout}>
+            <i className="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
           </button>
         </nav>
+      </header>
 
-        <main className="dashboard-main-content">
+
+      <main className="dashboard-main-content">
           {activeSection === 'overview' && (
             <section className="dashboard-section">
-              <h2 className="section-title">Home Base</h2>
-              
               <div className="tilted-cards-grid">
                 {dashboardStats.map((stat, index) => (
                   <TiltedCard
                     key={index}
-                    imageSrc={stat.image}
                     altText={stat.title}
                     captionText={stat.title}
                     containerHeight="280px"
@@ -186,17 +177,12 @@ export const AvengerDashboard = () => {
           {/* Add other sections as needed */}
           {activeSection !== 'overview' && (
             <section className="dashboard-section">
-              <h2 className="section-title">
-                <i className="fas fa-cog"></i>
-                {activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}
-              </h2>
               <div className="card">
                 <p>This section is under development.</p>
               </div>
             </section>
           )}
-        </main>
-      </div>
+      </main>
     </div>
   )
 }
