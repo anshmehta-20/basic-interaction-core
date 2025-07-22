@@ -12,7 +12,13 @@
 .theme-switch-wrapper em {
   color: #fff;
   font-style: normal;
-  font-weight: 500;
+  font-family: 'nougat-extrablack-webfont', 'Nougat ExtraBlack', sans-serif;
+  font-weight: 650;
+  font-size: 1.2rem;
+}
+
+body.light-mode .theme-switch-wrapper em {
+  color: #000;
 }
 
 .theme-switch {
