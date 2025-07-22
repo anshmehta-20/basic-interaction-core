@@ -217,7 +217,7 @@ body.light-mode .avenger-dashboard .logout-nav-btn {
 
 
 /* Main Content */
-/* .dashboard-main-content {
+.dashboard-main-content {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
@@ -233,7 +233,7 @@ body.light-mode .avenger-dashboard .logout-nav-btn {
 body.light-mode .dashboard-main-content {
   background: rgba(255, 255, 255, 0.95);
   border-color: rgba(220, 53, 69, 0.2);
-} */
+}
 
 .avenger-dashboard .dashboard-main-content {
   border-color: rgba(82, 39, 255, 0.3);
