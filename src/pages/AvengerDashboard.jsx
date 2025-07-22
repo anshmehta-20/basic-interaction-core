@@ -67,7 +67,7 @@ export const AvengerDashboard = () => {
           dotSize={2}
           gap={18}
           baseColor="#2a2a2a"
-          activeColor="#2507ff"
+          activeColor={isDark ? "#2507ff" : "#2507ff"}
           proximity={80}
           shockRadius={120}
           shockStrength={4}

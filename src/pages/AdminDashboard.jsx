@@ -67,7 +67,7 @@ export const AdminDashboard = () => {
           dotSize={2}
           gap={18}
           baseColor="#2a2a2a"
-          activeColor="#ff4757"
+          activeColor={isDark ? "#ff4757" : "#ff2020"}
           proximity={80}
           shockRadius={120}
           shockStrength={4}
