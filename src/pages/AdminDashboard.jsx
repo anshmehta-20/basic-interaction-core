@@ -44,17 +44,17 @@ export const AdminDashboard = () => {
   ]
 
   const navigationItems = [
-    { id: 'overview', label: 'Mission Overview', icon: 'fas fa-chart-line' },
-    { id: 'heroes', label: 'Heroes Registry', icon: 'fas fa-users' },
-    { id: 'missions', label: 'Active Missions', icon: 'fas fa-crosshairs' },
+    { id: 'overview', label: 'Overview', icon: 'fas fa-chart-line' },
+    { id: 'missions', label: 'Missions', icon: 'fas fa-crosshairs' },
+    { id: 'avengers', label: 'Avengers', icon: 'fas fa-users' },
+    { id: 'threats', label: 'Threats', icon: 'fas fa-exclamation-triangle' },
+    { id: 'analytics', label: 'Analytics', icon: 'fas fa-chart-bar' },
     { id: 'attendance', label: 'Attendance', icon: 'fas fa-calendar-check' },
-    { id: 'reports', label: 'Mission Reports', icon: 'fas fa-file-alt' },
-    { id: 'alerts', label: 'Threat Alerts', icon: 'fas fa-exclamation-triangle' },
     { id: 'settings', label: 'System Settings', icon: 'fas fa-cog' }
   ]
 
   return (
-    <div className="content-wrapper admin-dashboard">
+    <div className="admin-dashboard">
       <div style={{ 
         position: 'fixed', 
         top: 0, 
@@ -76,9 +76,11 @@ export const AdminDashboard = () => {
         />
       </div>
       
-      <header className="dashboard-header">
-        <h1 className="dashboard-title">Admin Dashboard</h1>
-        
+      <div className="dashboard-container">
+        <header className="dashboard-header">
+          <h1 className="dashboard-title">Admin Dashboard</h1>
+        </header>
+
         <nav className="horizontal-nav">
           {navigationItems.map((item) => (
             <button
@@ -95,11 +97,11 @@ export const AdminDashboard = () => {
             <span>Logout</span>
           </button>
         </nav>
-      </header>
 
-      <main className="dashboard-main-content">
+        <main className="dashboard-main-content">
           {activeSection === 'overview' && (
-            <section className="dashboard-section">
+            <div className="dashboard-section">
+              <h2 className="section-title">Dashboard Overview</h2>
               <div className="tilted-cards-grid">
                 {dashboardStats.map((stat, index) => (
                   <TiltedCard
@@ -153,11 +155,12 @@ export const AdminDashboard = () => {
                   </div>
                 </div>
               </div>
-            </section>
+            </div>
           )}
 
-          {activeSection === 'heroes' && (
-            <section className="dashboard-section">
+          {activeSection === 'avengers' && (
+            <div className="dashboard-section">
+              <h2 className="section-title">Avengers Registry</h2>
               <div className="avengers-grid">
                 <div className="avenger-card">
                   <div className="avenger-avatar">
@@ -259,18 +262,55 @@ export const AdminDashboard = () => {
                   </div>
                 </div>
               </div>
-            </section>
+            </div>
           )}
 
-          {/* Add other sections as needed */}
-          {activeSection !== 'overview' && activeSection !== 'heroes' && (
-            <section className="dashboard-section">
+          {activeSection === 'missions' && (
+            <div className="dashboard-section">
+              <h2 className="section-title">Mission Control</h2>
               <div className="card">
-                <p>This section is under development.</p>
+                <p>Mission management interface coming soon...</p>
               </div>
-            </section>
+            </div>
           )}
-      </main>
+
+          {activeSection === 'threats' && (
+            <div className="dashboard-section">
+              <h2 className="section-title">Threat Assessment</h2>
+              <div className="card">
+                <p>Threat monitoring system coming soon...</p>
+              </div>
+            </div>
+          )}
+
+          {activeSection === 'analytics' && (
+            <div className="dashboard-section">
+              <h2 className="section-title">Analytics Dashboard</h2>
+              <div className="card">
+                <p>Advanced analytics coming soon...</p>
+              </div>
+            </div>
+          )}
+
+          {activeSection === 'attendance' && (
+            <div className="dashboard-section">
+              <h2 className="section-title">Attendance Management</h2>
+              <div className="card">
+                <p>Attendance tracking system coming soon...</p>
+              </div>
+            </div>
+          )}
+
+          {activeSection === 'settings' && (
+            <div className="dashboard-section">
+              <h2 className="section-title">System Settings</h2>
+              <div className="card">
+                <p>System configuration panel coming soon...</p>
+              </div>
+            </div>
+          )}
+        </main>
+      </div>
     </div>
   )
 }

@@ -44,17 +44,17 @@ export const AvengerDashboard = () => {
   ]
 
   const navigationItems = [
-    { id: 'overview', label: 'Home Base', icon: 'fas fa-home' },
-    { id: 'missions', label: 'My Missions', icon: 'fas fa-rocket' },
-    { id: 'attendance', label: 'Check-In', icon: 'fas fa-user-check' },
-    { id: 'balance', label: 'Account Balance', icon: 'fas fa-wallet' },
-    { id: 'feedback', label: 'Send Feedback', icon: 'fas fa-comment-dots' },
-    { id: 'announcements', label: 'Announcements', icon: 'fas fa-bullhorn' },
+    { id: 'overview', label: 'Overview', icon: 'fas fa-home' },
+    { id: 'missions', label: 'Missions', icon: 'fas fa-rocket' },
+    { id: 'training', label: 'Training', icon: 'fas fa-dumbbell' },
+    { id: 'team', label: 'Team', icon: 'fas fa-users' },
+    { id: 'reports', label: 'Reports', icon: 'fas fa-chart-line' },
+    { id: 'attendance', label: 'Attendance', icon: 'fas fa-user-check' },
     { id: 'profile', label: 'Profile', icon: 'fas fa-user-cog' }
   ]
 
   return (
-    <div className="content-wrapper avenger-dashboard">
+    <div className="avenger-dashboard">
       <div style={{ 
         position: 'fixed', 
         top: 0, 
@@ -76,9 +76,11 @@ export const AvengerDashboard = () => {
         />
       </div>
       
-      <header className="dashboard-header">
-        <h1 className="dashboard-title">Avenger Dashboard</h1>
-        
+      <div className="dashboard-container">
+        <header className="dashboard-header">
+          <h1 className="dashboard-title">Avenger Dashboard</h1>
+        </header>
+
         <nav className="horizontal-nav">
           {navigationItems.map((item) => (
             <button
@@ -95,12 +97,11 @@ export const AvengerDashboard = () => {
             <span>Logout</span>
           </button>
         </nav>
-      </header>
 
-
-      <main className="dashboard-main-content">
+        <main className="dashboard-main-content">
           {activeSection === 'overview' && (
-            <section className="dashboard-section">
+            <div className="dashboard-section">
+              <h2 className="section-title">Mission Overview</h2>
               <div className="tilted-cards-grid">
                 {dashboardStats.map((stat, index) => (
                   <TiltedCard
@@ -171,18 +172,64 @@ export const AvengerDashboard = () => {
                   </div>
                 </div>
               </div>
-            </section>
+            </div>
           )}
 
-          {/* Add other sections as needed */}
-          {activeSection !== 'overview' && (
-            <section className="dashboard-section">
+          {activeSection === 'missions' && (
+            <div className="dashboard-section">
+              <h2 className="section-title">My Missions</h2>
               <div className="card">
-                <p>This section is under development.</p>
+                <p>Mission tracking interface coming soon...</p>
               </div>
-            </section>
+            </div>
           )}
-      </main>
+
+          {activeSection === 'training' && (
+            <div className="dashboard-section">
+              <h2 className="section-title">Training Programs</h2>
+              <div className="card">
+                <p>Training modules coming soon...</p>
+              </div>
+            </div>
+          )}
+
+          {activeSection === 'team' && (
+            <div className="dashboard-section">
+              <h2 className="section-title">Team Directory</h2>
+              <div className="card">
+                <p>Team member directory coming soon...</p>
+              </div>
+            </div>
+          )}
+
+          {activeSection === 'reports' && (
+            <div className="dashboard-section">
+              <h2 className="section-title">Mission Reports</h2>
+              <div className="card">
+                <p>Report generation system coming soon...</p>
+              </div>
+            </div>
+          )}
+
+          {activeSection === 'attendance' && (
+            <div className="dashboard-section">
+              <h2 className="section-title">Attendance Tracking</h2>
+              <div className="card">
+                <p>Attendance management coming soon...</p>
+              </div>
+            </div>
+          )}
+
+          {activeSection === 'profile' && (
+            <div className="dashboard-section">
+              <h2 className="section-title">Profile Settings</h2>
+              <div className="card">
+                <p>Profile management coming soon...</p>
+              </div>
+            </div>
+          )}
+        </main>
+      </div>
     </div>
   )
 }
