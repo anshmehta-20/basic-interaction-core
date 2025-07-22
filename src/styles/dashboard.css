@@ -73,6 +73,7 @@ body.light-mode .avenger-dashboard .dashboard-header{
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
+  padding-left: 10px;
 }
 
 .avenger-dashboard .dashboard-title {
