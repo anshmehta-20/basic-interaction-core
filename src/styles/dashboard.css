@@ -50,11 +50,16 @@
 }
 
 body.light-mode .dashboard-header {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.2);
   border-bottom-color: rgba(220, 53, 69, 0.2);
 }
+body.light-mode .avenger-dashboard .dashboard-header{
+  border-bottom-color: #2007ff;
+}
 
-
+.avenger-dashboard .dashboard-header{
+  border-bottom-color: #2007ff;
+}
 .dashboard-title {
   font-family: 'Avengers', sans-serif;
   font-size: 2.5rem;
@@ -615,6 +620,7 @@ body.light-mode .avenger-role {
 
 .dashboard-title-span{
   padding-right:10px;
+  padding-left: 10px;
 }
 
 .avenger-stats {
