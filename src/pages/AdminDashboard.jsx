@@ -113,7 +113,7 @@ export const AdminDashboard = () => {
                     rotateAmplitude={12}
                     scaleOnHover={1.1}
                     showMobileWarning={false}
-                    showTooltip={true}
+                    showTooltip={false}
                     displayOverlayContent={true}
                     overlayContent={
                       <div>
